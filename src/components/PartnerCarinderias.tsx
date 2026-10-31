@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Partner } from '../types';
 import { filterApprovedPartners } from '../utils/riceBank';
 import { MapPin, Clock, Search, HelpCircle, Store, HeartHandshake, Flame, ExternalLink, Mail, Printer, CheckCircle2, FileText, ArrowRight } from 'lucide-react';
+import { getAssetUrl } from '../utils/paths';
 
 interface PartnerCarinderiasProps {
   partners: Partner[];
@@ -112,7 +113,7 @@ export const PartnerCarinderias: React.FC<PartnerCarinderiasProps> = ({
                   </a>
 
                   <a
-                    href="/assets/aistudio/Kain_Tayo_Printable_Toolkit_654d1884.pdf"
+                    href={getAssetUrl('assets/aistudio/Kain_Tayo_Printable_Toolkit_654d1884.pdf')}
                     target="_blank"
                     rel="noreferrer"
                     className="px-5 py-3 rounded-xl border border-stone-300 bg-white hover:bg-stone-50 text-stone-800 font-semibold text-xs sm:text-sm flex items-center gap-2 transition-colors"

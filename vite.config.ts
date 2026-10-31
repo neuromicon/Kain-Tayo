@@ -3,13 +3,17 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
-export default defineConfig(() => {
+export default defineConfig(({ command }) => {
+  // In production builds for GitHub Pages (https://neuromicon.github.io/Kain-Tayo/), base is /Kain-Tayo/
+  // In dev server, base is /
+  const base = command === 'build' ? '/Kain-Tayo/' : '/';
+
   return {
-    base: './',
+    base,
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
+        '@': path.resolve(import.meta.dirname, '.'),
       },
     },
     server: {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Store, ShieldCheck, HeartHandshake, CheckCircle2, FolderGit2, Printer } from 'lucide-react';
+import heroRiceImage from '../assets/images/hero_rice_dumaguete_1793432425673.jpg';
 
 interface HeroProps {
   onOpenPartnerModal: () => void;
@@ -105,7 +106,7 @@ export const Hero: React.FC<HeroProps> = ({
         <div className="lg:col-span-5 relative">
           <div className="relative rounded-2xl overflow-hidden border border-stone-200 shadow-md aspect-[4/3] sm:aspect-[16/11] bg-stone-100">
             <img
-              src="/src/assets/images/hero_rice_dumaguete_1793432425673.jpg"
+              src={heroRiceImage}
               alt="Fresh steaming white rice served in a rustic carinderia bowl in Dumaguete City"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"

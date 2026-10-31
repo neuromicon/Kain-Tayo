@@ -15,11 +15,16 @@ import {
   ChevronRight,
   Eye
 } from 'lucide-react';
+import { getAssetUrl } from '../utils/paths';
 
 export const OpenToolkit: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'agreement' | 'tally' | 'checklist' | 'readme'>('agreement');
   const [copied, setCopied] = useState(false);
   const [previewImage, setPreviewImage] = useState<{ src: string; title: string; filename: string } | null>(null);
+
+  const pdfToolkitUrl = getAssetUrl('assets/aistudio/Kain_Tayo_Printable_Toolkit_654d1884.pdf');
+  const bannerSignUrl = getAssetUrl('assets/aistudio/Print_it.png');
+  const posterImageUrl = getAssetUrl('assets/aistudio/Rice_Circle__Dumaguete_Shares_Kindness_487e773d.png');
 
   const vendorAgreementText = `VENDOR AGREEMENT (TEMPLATE)
 KAIN TAYO / RICE CIRCLE
@@ -60,7 +65,7 @@ For Participating Vendor: ________________________ Date: _______________________
   };
 
   const handlePrintTally = () => {
-    window.open('/assets/aistudio/Kain_Tayo_Printable_Toolkit_654d1884.pdf', '_blank');
+    window.open(pdfToolkitUrl, '_blank');
   };
 
   return (
@@ -94,7 +99,7 @@ For Participating Vendor: ________________________ Date: _______________________
               <span>GitHub: neuromicon/Kain-Tayo</span>
             </a>
             <a
-              href="/assets/aistudio/Kain_Tayo_Printable_Toolkit_654d1884.pdf"
+              href={pdfToolkitUrl}
               download="Kain_Tayo_Printable_Toolkit.pdf"
               target="_blank"
               rel="noreferrer"
@@ -104,7 +109,7 @@ For Participating Vendor: ________________________ Date: _______________________
               <span>Download PDF Toolkit (4 Pages)</span>
             </a>
             <a
-              href="/assets/aistudio/Rice_Circle__Dumaguete_Shares_Kindness_487e773d.png"
+              href={posterImageUrl}
               download="Rice_Circle_Dumaguete_Poster.png"
               target="_blank"
               rel="noreferrer"
@@ -151,7 +156,7 @@ For Participating Vendor: ________________________ Date: _______________________
 
             <div className="pt-3 border-t border-stone-200/80 flex items-center gap-2">
               <a
-                href="/assets/aistudio/Kain_Tayo_Printable_Toolkit_654d1884.pdf"
+                href={pdfToolkitUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="flex-1 py-1.5 px-2.5 rounded-lg bg-stone-900 hover:bg-stone-800 text-white font-semibold text-xs text-center transition-colors flex items-center justify-center gap-1.5"
@@ -160,7 +165,7 @@ For Participating Vendor: ________________________ Date: _______________________
                 <span>View PDF</span>
               </a>
               <a
-                href="/assets/aistudio/Kain_Tayo_Printable_Toolkit_654d1884.pdf"
+                href={pdfToolkitUrl}
                 download="Kain_Tayo_Printable_Toolkit.pdf"
                 className="py-1.5 px-2.5 rounded-lg border border-stone-300 hover:bg-stone-100 text-stone-700 text-xs font-semibold transition-colors flex items-center justify-center"
                 title="Download PDF"
@@ -175,11 +180,11 @@ For Participating Vendor: ________________________ Date: _______________________
             <div>
               <div className="relative rounded-xl overflow-hidden border border-stone-200 mb-3 aspect-[4/3] bg-stone-200">
                 <img
-                  src="/assets/aistudio/Print_it.png"
+                  src={bannerSignUrl}
                   alt="Kain Tayo Counter Display Sign"
                   className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300 cursor-pointer"
                   onClick={() => setPreviewImage({
-                    src: '/assets/aistudio/Print_it.png',
+                    src: bannerSignUrl,
                     title: 'Counter Display Sign — Buy Your Meal + Add 1 Rice',
                     filename: 'Kain_Tayo_Counter_Sign.png'
                   })}
@@ -187,7 +192,7 @@ For Participating Vendor: ________________________ Date: _______________________
                 <button
                   type="button"
                   onClick={() => setPreviewImage({
-                    src: '/assets/aistudio/Print_it.png',
+                    src: bannerSignUrl,
                     title: 'Counter Display Sign — Buy Your Meal + Add 1 Rice',
                     filename: 'Kain_Tayo_Counter_Sign.png'
                   })}
@@ -212,7 +217,7 @@ For Participating Vendor: ________________________ Date: _______________________
               <button
                 type="button"
                 onClick={() => setPreviewImage({
-                  src: '/assets/aistudio/Print_it.png',
+                  src: bannerSignUrl,
                   title: 'Counter Display Sign — Buy Your Meal + Add 1 Rice',
                   filename: 'Kain_Tayo_Counter_Sign.png'
                 })}
@@ -222,7 +227,7 @@ For Participating Vendor: ________________________ Date: _______________________
                 <span>Preview</span>
               </button>
               <a
-                href="/assets/aistudio/Print_it.png"
+                href={bannerSignUrl}
                 download="Kain_Tayo_Counter_Sign.png"
                 className="py-1.5 px-2.5 rounded-lg border border-stone-300 hover:bg-stone-100 text-stone-700 text-xs font-semibold transition-colors flex items-center justify-center"
                 title="Download Counter Sign (PNG)"
@@ -237,11 +242,11 @@ For Participating Vendor: ________________________ Date: _______________________
             <div>
               <div className="relative rounded-xl overflow-hidden border border-stone-200 mb-3 aspect-[4/3] bg-stone-200">
                 <img
-                  src="/assets/aistudio/Rice_Circle__Dumaguete_Shares_Kindness_487e773d.png"
+                  src={posterImageUrl}
                   alt="Rice Circle Dumaguete - A City That Shares poster"
                   className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300 cursor-pointer"
                   onClick={() => setPreviewImage({
-                    src: '/assets/aistudio/Rice_Circle__Dumaguete_Shares_Kindness_487e773d.png',
+                    src: posterImageUrl,
                     title: 'Rice Circle Dumaguete — Official Illustrated Poster',
                     filename: 'Rice_Circle_Dumaguete_Poster.png'
                   })}
@@ -249,7 +254,7 @@ For Participating Vendor: ________________________ Date: _______________________
                 <button
                   type="button"
                   onClick={() => setPreviewImage({
-                    src: '/assets/aistudio/Rice_Circle__Dumaguete_Shares_Kindness_487e773d.png',
+                    src: posterImageUrl,
                     title: 'Rice Circle Dumaguete — Official Illustrated Poster',
                     filename: 'Rice_Circle_Dumaguete_Poster.png'
                   })}
@@ -274,7 +279,7 @@ For Participating Vendor: ________________________ Date: _______________________
               <button
                 type="button"
                 onClick={() => setPreviewImage({
-                  src: '/assets/aistudio/Rice_Circle__Dumaguete_Shares_Kindness_487e773d.png',
+                  src: posterImageUrl,
                   title: 'Rice Circle Dumaguete — Official Illustrated Poster',
                   filename: 'Rice_Circle_Dumaguete_Poster.png'
                 })}
@@ -284,7 +289,7 @@ For Participating Vendor: ________________________ Date: _______________________
                 <span>Preview</span>
               </button>
               <a
-                href="/assets/aistudio/Rice_Circle__Dumaguete_Shares_Kindness_487e773d.png"
+                href={posterImageUrl}
                 download="Rice_Circle_Dumaguete_Poster.png"
                 className="py-1.5 px-2.5 rounded-lg border border-stone-300 hover:bg-stone-100 text-stone-700 text-xs font-semibold transition-colors flex items-center justify-center"
                 title="Download High-Res PNG"
@@ -437,7 +442,7 @@ For Participating Vendor: ________________________ Date: _______________________
                     <p className="text-stone-400 text-xs">Kept by each carinderia counter to record prepaid and redeemed servings on paper.</p>
                   </div>
                   <a
-                    href="/assets/aistudio/Kain_Tayo_Printable_Toolkit_654d1884.pdf"
+                    href={pdfToolkitUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="px-3.5 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white font-semibold text-xs flex items-center gap-1.5 transition-colors"

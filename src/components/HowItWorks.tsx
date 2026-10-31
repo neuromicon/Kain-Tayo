@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sparkles, Utensils, HeartHandshake, CheckCircle2, Shield, Printer, Store, ExternalLink, Mail } from 'lucide-react';
+import { getAssetUrl } from '../utils/paths';
 
 interface HowItWorksProps {
   onOpenClaimGuide: () => void;
@@ -124,7 +125,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onOpenClaimGuide, onOpen
             </a>
 
             <a
-              href="/assets/aistudio/Kain_Tayo_Printable_Toolkit_654d1884.pdf"
+              href={getAssetUrl('assets/aistudio/Kain_Tayo_Printable_Toolkit_654d1884.pdf')}
               target="_blank"
               rel="noreferrer"
               className="w-full py-3 px-4 rounded-xl bg-white hover:bg-amber-50 text-stone-900 font-semibold text-xs text-center border border-amber-600/40 flex items-center justify-center gap-2 transition-colors"
