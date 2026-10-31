@@ -1,7 +1,7 @@
 # 🌾 Rice Circle Dumaguete | Kain Tayo
 
 <p align="center">
-  <img src="public/assets/aistudio/Rice_Circle__Dumaguete_Shares_Kindness_487e773d.png" alt="Rice Circle Dumaguete — Buy 1 + Give 1" width="440" style="border-radius: 18px; box-shadow: 0 12px 30px rgba(0,0,0,0.15);" />
+  <img src="public/assets/aistudio/Print_it.png" alt="Rice Circle Dumaguete — Buy 1 + Give 1" width="440" style="border-radius: 18px; box-shadow: 0 12px 30px rgba(0,0,0,0.15);" />
 </p>
 
 <p align="center">
