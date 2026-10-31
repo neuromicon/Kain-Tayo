@@ -19,7 +19,7 @@ import {
 export const OpenToolkit: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'agreement' | 'tally' | 'checklist' | 'readme'>('agreement');
   const [copied, setCopied] = useState(false);
-  const [showPosterPreview, setShowPosterPreview] = useState(false);
+  const [previewImage, setPreviewImage] = useState<{ src: string; title: string; filename: string } | null>(null);
 
   const vendorAgreementText = `VENDOR AGREEMENT (TEMPLATE)
 KAIN TAYO / RICE CIRCLE
@@ -116,57 +116,53 @@ For Participating Vendor: ________________________ Date: _______________________
           </div>
         </div>
 
-        {/* 3 Core Asset Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-14">
+        {/* 4 Core Asset Cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
           {/* Card 1: Printable Toolkit PDF */}
-          <div className="bg-[#FAF8F5] rounded-2xl border border-stone-200 p-6 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
+          <div className="bg-[#FAF8F5] rounded-2xl border border-stone-200 p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
             <div>
-              <div className="w-12 h-12 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center mb-4">
-                <FileText className="w-6 h-6 text-amber-700" />
+              <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center mb-3">
+                <FileText className="w-5 h-5 text-amber-700" />
               </div>
-              <div className="text-[11px] font-mono font-semibold text-amber-800 uppercase tracking-wider mb-1">
-                Print-Ready Document · 4 Pages
+              <div className="text-[10px] font-mono font-semibold text-amber-800 uppercase tracking-wider mb-1">
+                Print Pack · 4 Pages
               </div>
-              <h3 className="font-bold text-stone-900 text-lg mb-2">
-                Printable Toolkit Pack (PDF)
+              <h3 className="font-bold text-stone-900 text-base mb-1.5">
+                Printable Toolkit (PDF)
               </h3>
-              <p className="text-xs text-stone-600 leading-relaxed mb-4">
-                Ready-to-print materials for counters and walls:
+              <p className="text-xs text-stone-600 leading-relaxed mb-3">
+                Ready-to-print materials for eatery walls and counters:
               </p>
-              <ul className="text-xs text-stone-600 space-y-1.5 mb-6">
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
-                  <span>Page 1: Public Eatery Poster (A4)</span>
+              <ul className="text-[11px] text-stone-600 space-y-1 mb-4">
+                <li className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-600 shrink-0" />
+                  <span>Public Eatery Poster (A4)</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
-                  <span>Page 2: Counter Display Table Tent</span>
+                <li className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-600 shrink-0" />
+                  <span>Counter Display Table Tent</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
-                  <span>Page 3: Daily Vendor Tally Ledger</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
-                  <span>Page 4: City Pilot Launch Checklist</span>
+                <li className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-600 shrink-0" />
+                  <span>Daily Vendor Tally Sheet</span>
                 </li>
               </ul>
             </div>
 
-            <div className="pt-4 border-t border-stone-200/80 flex items-center gap-2">
+            <div className="pt-3 border-t border-stone-200/80 flex items-center gap-2">
               <a
                 href="/assets/aistudio/Kain_Tayo_Printable_Toolkit_654d1884.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 py-2 px-3 rounded-lg bg-stone-900 hover:bg-stone-800 text-white font-semibold text-xs text-center transition-colors flex items-center justify-center gap-1.5"
+                className="flex-1 py-1.5 px-2.5 rounded-lg bg-stone-900 hover:bg-stone-800 text-white font-semibold text-xs text-center transition-colors flex items-center justify-center gap-1.5"
               >
-                <Eye className="w-3.5 h-3.5 text-amber-400" />
+                <Eye className="w-3 h-3 text-amber-400" />
                 <span>View PDF</span>
               </a>
               <a
                 href="/assets/aistudio/Kain_Tayo_Printable_Toolkit_654d1884.pdf"
                 download="Kain_Tayo_Printable_Toolkit.pdf"
-                className="py-2 px-3 rounded-lg border border-stone-300 hover:bg-stone-100 text-stone-700 text-xs font-semibold transition-colors flex items-center justify-center"
+                className="py-1.5 px-2.5 rounded-lg border border-stone-300 hover:bg-stone-100 text-stone-700 text-xs font-semibold transition-colors flex items-center justify-center"
                 title="Download PDF"
               >
                 <Download className="w-3.5 h-3.5" />
@@ -174,49 +170,123 @@ For Participating Vendor: ________________________ Date: _______________________
             </div>
           </div>
 
-          {/* Card 2: Official Campaign Artwork */}
-          <div className="bg-[#FAF8F5] rounded-2xl border border-stone-200 p-6 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
+          {/* Card 2: Cash Counter Display Sign (Print_it.png) */}
+          <div className="bg-[#FAF8F5] rounded-2xl border border-stone-200 p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
             <div>
-              <div className="relative rounded-xl overflow-hidden border border-stone-200 mb-4 aspect-[4/3] bg-stone-200">
+              <div className="relative rounded-xl overflow-hidden border border-stone-200 mb-3 aspect-[4/3] bg-stone-200">
                 <img
-                  src="/assets/aistudio/Rice_Circle__Dumaguete_Shares_Kindness_487e773d.png"
-                  alt="Rice Circle Dumaguete - A City That Shares poster"
+                  src="/assets/aistudio/Print_it.png"
+                  alt="Kain Tayo Counter Display Sign"
                   className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300 cursor-pointer"
-                  onClick={() => setShowPosterPreview(true)}
+                  onClick={() => setPreviewImage({
+                    src: '/assets/aistudio/Print_it.png',
+                    title: 'Counter Display Sign — Buy Your Meal + Add 1 Rice',
+                    filename: 'Kain_Tayo_Counter_Sign.png'
+                  })}
                 />
                 <button
                   type="button"
-                  onClick={() => setShowPosterPreview(true)}
-                  className="absolute bottom-2 right-2 px-2.5 py-1 rounded bg-stone-900/80 backdrop-blur-xs text-white text-[10px] font-semibold flex items-center gap-1"
+                  onClick={() => setPreviewImage({
+                    src: '/assets/aistudio/Print_it.png',
+                    title: 'Counter Display Sign — Buy Your Meal + Add 1 Rice',
+                    filename: 'Kain_Tayo_Counter_Sign.png'
+                  })}
+                  className="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-stone-900/80 backdrop-blur-xs text-white text-[10px] font-semibold flex items-center gap-1"
                 >
                   <Eye className="w-3 h-3 text-amber-300" />
                   <span>Enlarge</span>
                 </button>
               </div>
-              <div className="text-[11px] font-mono font-semibold text-brand-700 uppercase tracking-wider mb-1">
-                Visual Identity & Poster
+              <div className="text-[10px] font-mono font-semibold text-brand-700 uppercase tracking-wider mb-1">
+                Counter Sign (PNG)
               </div>
-              <h3 className="font-bold text-stone-900 text-lg mb-1">
-                Official Illustrated Poster
+              <h3 className="font-bold text-stone-900 text-base mb-1">
+                Cash Register Infographic
               </h3>
               <p className="text-xs text-stone-600 leading-relaxed">
-                Featuring the Dumaguete Campanario (Belfry) skyline, the warm bowl illustration, and core community commitments.
+                Step-by-step 5-stage graphic explaining how the rice bank functions at the counter.
               </p>
             </div>
 
-            <div className="pt-4 border-t border-stone-200/80 flex items-center gap-2">
+            <div className="pt-3 border-t border-stone-200/80 flex items-center gap-2">
               <button
                 type="button"
-                onClick={() => setShowPosterPreview(true)}
-                className="flex-1 py-2 px-3 rounded-lg bg-stone-900 hover:bg-stone-800 text-white font-semibold text-xs text-center transition-colors flex items-center justify-center gap-1.5"
+                onClick={() => setPreviewImage({
+                  src: '/assets/aistudio/Print_it.png',
+                  title: 'Counter Display Sign — Buy Your Meal + Add 1 Rice',
+                  filename: 'Kain_Tayo_Counter_Sign.png'
+                })}
+                className="flex-1 py-1.5 px-2.5 rounded-lg bg-stone-900 hover:bg-stone-800 text-white font-semibold text-xs text-center transition-colors flex items-center justify-center gap-1.5"
               >
-                <Eye className="w-3.5 h-3.5 text-amber-400" />
-                <span>Preview Artwork</span>
+                <Eye className="w-3 h-3 text-amber-400" />
+                <span>Preview</span>
+              </button>
+              <a
+                href="/assets/aistudio/Print_it.png"
+                download="Kain_Tayo_Counter_Sign.png"
+                className="py-1.5 px-2.5 rounded-lg border border-stone-300 hover:bg-stone-100 text-stone-700 text-xs font-semibold transition-colors flex items-center justify-center"
+                title="Download Counter Sign (PNG)"
+              >
+                <Download className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+
+          {/* Card 3: Official Campaign Artwork */}
+          <div className="bg-[#FAF8F5] rounded-2xl border border-stone-200 p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
+            <div>
+              <div className="relative rounded-xl overflow-hidden border border-stone-200 mb-3 aspect-[4/3] bg-stone-200">
+                <img
+                  src="/assets/aistudio/Rice_Circle__Dumaguete_Shares_Kindness_487e773d.png"
+                  alt="Rice Circle Dumaguete - A City That Shares poster"
+                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300 cursor-pointer"
+                  onClick={() => setPreviewImage({
+                    src: '/assets/aistudio/Rice_Circle__Dumaguete_Shares_Kindness_487e773d.png',
+                    title: 'Rice Circle Dumaguete — Official Illustrated Poster',
+                    filename: 'Rice_Circle_Dumaguete_Poster.png'
+                  })}
+                />
+                <button
+                  type="button"
+                  onClick={() => setPreviewImage({
+                    src: '/assets/aistudio/Rice_Circle__Dumaguete_Shares_Kindness_487e773d.png',
+                    title: 'Rice Circle Dumaguete — Official Illustrated Poster',
+                    filename: 'Rice_Circle_Dumaguete_Poster.png'
+                  })}
+                  className="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-stone-900/80 backdrop-blur-xs text-white text-[10px] font-semibold flex items-center gap-1"
+                >
+                  <Eye className="w-3 h-3 text-amber-300" />
+                  <span>Enlarge</span>
+                </button>
+              </div>
+              <div className="text-[10px] font-mono font-semibold text-amber-800 uppercase tracking-wider mb-1">
+                Campaign Poster (PNG)
+              </div>
+              <h3 className="font-bold text-stone-900 text-base mb-1">
+                Official Illustrated Poster
+              </h3>
+              <p className="text-xs text-stone-600 leading-relaxed">
+                Featuring the Dumaguete Belfry skyline, the warm rice bowl, and community pledge.
+              </p>
+            </div>
+
+            <div className="pt-3 border-t border-stone-200/80 flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setPreviewImage({
+                  src: '/assets/aistudio/Rice_Circle__Dumaguete_Shares_Kindness_487e773d.png',
+                  title: 'Rice Circle Dumaguete — Official Illustrated Poster',
+                  filename: 'Rice_Circle_Dumaguete_Poster.png'
+                })}
+                className="flex-1 py-1.5 px-2.5 rounded-lg bg-stone-900 hover:bg-stone-800 text-white font-semibold text-xs text-center transition-colors flex items-center justify-center gap-1.5"
+              >
+                <Eye className="w-3 h-3 text-amber-400" />
+                <span>Preview</span>
               </button>
               <a
                 href="/assets/aistudio/Rice_Circle__Dumaguete_Shares_Kindness_487e773d.png"
                 download="Rice_Circle_Dumaguete_Poster.png"
-                className="py-2 px-3 rounded-lg border border-stone-300 hover:bg-stone-100 text-stone-700 text-xs font-semibold transition-colors flex items-center justify-center"
+                className="py-1.5 px-2.5 rounded-lg border border-stone-300 hover:bg-stone-100 text-stone-700 text-xs font-semibold transition-colors flex items-center justify-center"
                 title="Download High-Res PNG"
               >
                 <Download className="w-3.5 h-3.5" />
@@ -224,42 +294,38 @@ For Participating Vendor: ________________________ Date: _______________________
             </div>
           </div>
 
-          {/* Card 3: Organizer Starter Kit & Agreement */}
-          <div className="bg-[#FAF8F5] rounded-2xl border border-stone-200 p-6 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
+          {/* Card 4: Organizer Starter Kit & Agreement */}
+          <div className="bg-[#FAF8F5] rounded-2xl border border-stone-200 p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
             <div>
-              <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center mb-4">
-                <Layers className="w-6 h-6 text-emerald-700" />
+              <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center mb-3">
+                <Layers className="w-5 h-5 text-emerald-700" />
               </div>
-              <div className="text-[11px] font-mono font-semibold text-emerald-800 uppercase tracking-wider mb-1">
-                Documentation & Rules
+              <div className="text-[10px] font-mono font-semibold text-emerald-800 uppercase tracking-wider mb-1">
+                Rules & Governance
               </div>
-              <h3 className="font-bold text-stone-900 text-lg mb-2">
-                Starter Kit & Agreement
+              <h3 className="font-bold text-stone-900 text-base mb-1.5">
+                Starter Kit & Rules
               </h3>
-              <p className="text-xs text-stone-600 leading-relaxed mb-4">
-                The full governance rules and vendor contracts from the Kain Tayo Starter Kit:
+              <p className="text-xs text-stone-600 leading-relaxed mb-3">
+                Governance, safety rules, and operational vendor agreement:
               </p>
-              <ul className="text-xs text-stone-600 space-y-1.5 mb-6">
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
-                  <span>The 8 Non-Negotiable Principles</span>
+              <ul className="text-[11px] text-stone-600 space-y-1 mb-4">
+                <li className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
+                  <span>8 Non-Negotiable Principles</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
-                  <span>30-Day Launch Implementation Plan</span>
+                <li className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
+                  <span>30-Day City Pilot Playbook</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
-                  <span>Operational Food Safety Guidelines</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
-                  <span>Binding Vendor Agreement Template</span>
+                <li className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
+                  <span>Vendor Agreement Template</span>
                 </li>
               </ul>
             </div>
 
-            <div className="pt-4 border-t border-stone-200/80">
+            <div className="pt-3 border-t border-stone-200/80">
               <button
                 type="button"
                 onClick={() => {
@@ -267,9 +333,9 @@ For Participating Vendor: ________________________ Date: _______________________
                   const el = document.getElementById('repo-viewer');
                   el?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="w-full py-2 px-3 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-xs text-center transition-colors flex items-center justify-center gap-1.5"
+                className="w-full py-1.5 px-2.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-xs text-center transition-colors flex items-center justify-center gap-1.5"
               >
-                <span>Read & Copy Agreement</span>
+                <span>Read Agreement</span>
                 <ChevronRight className="w-3.5 h-3.5" />
               </button>
             </div>
@@ -522,35 +588,35 @@ For Participating Vendor: ________________________ Date: _______________________
           </div>
         </div>
 
-        {/* Modal Poster Lightbox */}
-        {showPosterPreview && (
+        {/* Modal Image Lightbox */}
+        {previewImage && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
             <div className="relative max-w-2xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl">
               <button
                 type="button"
-                onClick={() => setShowPosterPreview(false)}
+                onClick={() => setPreviewImage(null)}
                 className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-stone-900/80 text-white flex items-center justify-center hover:bg-stone-900 transition-colors"
-                aria-label="Close poster preview"
+                aria-label="Close image preview"
               >
                 ✕
               </button>
               <div className="max-h-[85vh] overflow-y-auto p-4 flex flex-col items-center">
                 <img
-                  src="/assets/aistudio/Rice_Circle__Dumaguete_Shares_Kindness_487e773d.png"
-                  alt="Full illustrated Rice Circle Dumaguete poster"
+                  src={previewImage.src}
+                  alt={previewImage.title}
                   className="w-full rounded-2xl shadow-sm"
                 />
-                <div className="mt-4 flex items-center justify-between w-full px-2">
-                  <span className="text-xs text-stone-500 font-sans">
-                    Official Campaign Artwork · Rice Circle Dumaguete
+                <div className="mt-4 flex flex-col sm:flex-row items-center justify-between w-full px-2 gap-3">
+                  <span className="text-xs text-stone-600 font-sans font-medium">
+                    {previewImage.title}
                   </span>
                   <a
-                    href="/assets/aistudio/Rice_Circle__Dumaguete_Shares_Kindness_487e773d.png"
-                    download="Rice_Circle_Dumaguete_Poster.png"
-                    className="px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs flex items-center gap-2"
+                    href={previewImage.src}
+                    download={previewImage.filename}
+                    className="px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs flex items-center gap-2 shadow-xs transition-colors shrink-0"
                   >
                     <Download className="w-3.5 h-3.5" />
-                    <span>Download Full Resolution PNG</span>
+                    <span>Download Full Resolution</span>
                   </a>
                 </div>
               </div>

@@ -85,6 +85,7 @@ Everything in this repository is ready to print on standard A4 or US Letter pape
   - Page 3: Daily Physical Vendor Tally Ledger
   - Page 4: 6-Step City Pilot Launch Checklist
 - 🖼️ **[Official Illustrated Poster (PNG)](public/assets/aistudio/Rice_Circle__Dumaguete_Shares_Kindness_487e773d.png)** — High-resolution artwork featuring Dumaguete landmarks.
+- 🖼️ **[Cash Counter Display Sign (PNG)](public/assets/aistudio/Print_it.png)** — Ready-to-print counter graphic explaining the 5-step rice bank process.
 - 📑 **[Vendor Agreement Template (MD)](docs/VENDOR_AGREEMENT.md)** — Transparent operational agreement for carinderia partnerships.
 - 🚀 **[Start in Your City Playbook (MD)](docs/START_IN_YOUR_CITY.md)** — Complete 30-day guide to replicate the model in Bacolod, Valencia, Cebu, or any municipality.
 - 📊 **[Daily Vendor Tally Guide (MD)](docs/DAILY_TALLY_GUIDE.md)** — Guide to running the simple paper counter sheet.

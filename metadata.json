@@ -2,5 +2,7 @@
   "name": "Rice Circle Dumaguete",
   "description": "Decentralized citywide community rice initiative in Dumaguete City. Buy one serving, fund one for someone who needs it.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
