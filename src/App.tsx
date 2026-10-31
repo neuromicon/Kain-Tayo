@@ -57,7 +57,7 @@ export default function App() {
     };
 
     setPartners((prev) => [...prev, newPartner]);
-    showToast(`${newPartner.name} registered as a partner carinderia!`);
+    showToast(`${newPartner.businessName || newPartner.name || 'Eatery'} registered as a partner carinderia!`);
   };
 
   return (

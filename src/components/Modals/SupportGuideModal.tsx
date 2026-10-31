@@ -43,11 +43,11 @@ export const SupportGuideModal: React.FC<SupportGuideModalProps> = ({
           <div className="mb-6 p-3.5 bg-amber-50 rounded-xl border border-amber-200 text-xs">
             <div className="flex items-center gap-1.5 font-bold text-stone-900">
               <MapPin className="w-3.5 h-3.5 text-brand-600" />
-              <span>{selectedPartner.name}</span>
+              <span>{selectedPartner.businessName || selectedPartner.name}</span>
             </div>
-            <p className="text-stone-600 text-[11px] mt-0.5">{selectedPartner.address}</p>
+            {selectedPartner.address && <p className="text-stone-600 text-[11px] mt-0.5">{selectedPartner.address}</p>}
             <p className="text-amber-900 font-semibold text-[11px] mt-1">
-              Standard cup price: ₱{selectedPartner.pricePerCup} · Host: {selectedPartner.contactPerson}
+              Standard cup price: ₱{selectedPartner.pricePerCup ?? '10–₱15'} · Host: {selectedPartner.contactPerson}
             </p>
           </div>
         )}

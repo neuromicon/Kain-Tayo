@@ -83,6 +83,17 @@ For Participating Vendor: ________________________ Date: _______________________
 
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <a
+              href="https://github.com/neuromicon/Kain-Tayo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2.5 rounded-xl bg-stone-900 hover:bg-stone-800 text-white text-xs font-semibold flex items-center gap-2 shadow-xs transition-colors"
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+              </svg>
+              <span>GitHub: neuromicon/Kain-Tayo</span>
+            </a>
+            <a
               href="/assets/aistudio/Kain_Tayo_Printable_Toolkit_654d1884.pdf"
               download="Kain_Tayo_Printable_Toolkit.pdf"
               target="_blank"
@@ -269,13 +280,19 @@ For Participating Vendor: ________________________ Date: _______________________
         <div id="repo-viewer" className="bg-stone-950 text-stone-200 rounded-3xl overflow-hidden border border-stone-800 shadow-xl">
           {/* Repo Top Bar */}
           <div className="px-6 py-4 bg-stone-900 border-b border-stone-800 flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-1.5 text-stone-400 text-xs font-mono">
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href="https://github.com/neuromicon/Kain-Tayo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-stone-300 hover:text-white text-xs font-mono transition-colors group"
+              >
                 <FolderGit2 className="w-4 h-4 text-amber-400" />
-                <span className="text-stone-300 font-semibold">rice-circle</span>
-                <span>/</span>
-                <span className="text-white font-bold">dumaguete-toolkit</span>
-              </div>
+                <span className="text-stone-300 font-semibold group-hover:underline">neuromicon</span>
+                <span className="text-stone-500">/</span>
+                <span className="text-white font-bold group-hover:underline">Kain-Tayo</span>
+                <ExternalLink className="w-3 h-3 text-stone-500 group-hover:text-amber-400" />
+              </a>
               <span className="px-2 py-0.5 rounded-full text-[10px] font-mono bg-stone-800 text-amber-400 border border-stone-700">
                 Public Domain · CC0
               </span>
@@ -443,22 +460,23 @@ For Participating Vendor: ________________________ Date: _______________________
                   <p className="text-stone-400 text-xs">Decentralized, community-supported food distribution.</p>
                 </div>
                 <div className="space-y-3 font-mono text-xs text-stone-300">
-                  <p># RICE CIRCLE DUMAGUETE / KAIN TAYO</p>
+                  <p className="text-amber-400 font-bold"># RICE CIRCLE DUMAGUETE / KAIN TAYO</p>
                   <p>&gt; BUY 1 + GIVE 1 · One for you. One for someone who needs it.</p>
                   <p>
-                    A customer purchases two servings of cooked rice:
-                    * One serving is consumed by the customer.
-                    * One serving is prepaid and added to the local Rice Bank.
-                    * Another person can claim that prepaid serving for free.
+                    Anyone visiting a local Dumaguete carinderia can simply pay for an extra cup of rice (₱10–₱15):
+                    * You can add a cup of rice to your own meal, or simply stop by to pay for rice.
+                    * The vendor keeps the payment upfront and leaves fresh rice hot in the pot.
+                    * Anyone in need asks with dignity and is served for free (₱0).
                   </p>
-                  <p className="text-amber-400">
+                  <p className="text-emerald-400">
                     Non-negotiable principle: No proof of poverty. No registration. No IDs. No questions asked.
                   </p>
                   <p>
-                    Licensed under Creative Commons Zero (CC0) / Public Domain. Anyone is free to copy, adapt, translate, and print these resources without copyright restrictions.
+                    Open social movement licensed under Creative Commons Zero (CC0 1.0 Universal) / Public Domain.
                   </p>
-                  <div className="pt-3 mt-3 border-t border-stone-800 text-stone-300">
-                    <p className="font-bold text-white mb-1">PARTNER & COORDINATION CONTACTS:</p>
+                  <div className="pt-3 mt-3 border-t border-stone-800 text-stone-300 space-y-1">
+                    <p className="font-bold text-white mb-1">PROJECT LINKS & REPOSITORY:</p>
+                    <p>• GitHub Repo: <a href="https://github.com/neuromicon/Kain-Tayo" target="_blank" rel="noopener noreferrer" className="text-amber-400 underline">https://github.com/neuromicon/Kain-Tayo</a></p>
                     <p>• Partner Google Form: <a href="https://forms.gle/v6x6HVLLgUudt7fC8" target="_blank" rel="noopener noreferrer" className="text-amber-400 underline">https://forms.gle/v6x6HVLLgUudt7fC8</a></p>
                     <p>• Direct Email: <a href="mailto:Neuromicon@gmail.com" className="text-amber-400 underline">Neuromicon@gmail.com</a></p>
                   </div>
@@ -472,9 +490,20 @@ For Participating Vendor: ________________________ Date: _______________________
         <div className="mt-8 p-6 rounded-3xl bg-[#FAF8F5] border border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <h4 className="font-bold text-stone-900 text-sm">Join the Network or Start in Your Town</h4>
-            <p className="text-stone-600 text-xs mt-0.5">Fill out our official vendor onboarding form or contact our coordination team directly.</p>
+            <p className="text-stone-600 text-xs mt-0.5">Fill out our official vendor onboarding form or explore the open civic repository on GitHub.</p>
           </div>
           <div className="flex flex-wrap items-center gap-2 shrink-0">
+            <a
+              href="https://github.com/neuromicon/Kain-Tayo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded-xl bg-stone-900 hover:bg-stone-800 text-white font-semibold text-xs flex items-center gap-1.5 shadow-xs transition-colors"
+            >
+              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+              </svg>
+              <span>GitHub Repo</span>
+            </a>
             <a
               href="https://forms.gle/v6x6HVLLgUudt7fC8"
               target="_blank"

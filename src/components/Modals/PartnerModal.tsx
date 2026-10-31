@@ -36,8 +36,10 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose, onA
     }
 
     onAddPartner({
+      businessName: name.trim(),
       name: name.trim(),
       contactPerson: contactPerson.trim(),
+      contactNumber: phone.trim(),
       area,
       address: address.trim(),
       landmark: landmark.trim() || 'Dumaguete City',
@@ -45,6 +47,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose, onA
       pricePerCup,
       operatingHours: '6:30 AM – 7:30 PM (Daily)',
       status: 'active',
+      isApproved: true,
       notes: notes.trim() || 'Neighborhood carinderia welcoming students and community members.'
     });
 

@@ -43,10 +43,12 @@ export const ClaimGuideModal: React.FC<ClaimGuideModalProps> = ({
           <div className="mb-6 p-3.5 bg-amber-50 rounded-xl border border-amber-200 text-xs">
             <div className="flex items-center gap-1.5 font-bold text-stone-900">
               <MapPin className="w-3.5 h-3.5 text-brand-600" />
-              <span>{selectedPartner.name}</span>
+              <span>{selectedPartner.businessName || selectedPartner.name}</span>
             </div>
-            <p className="text-stone-600 text-[11px] mt-0.5">{selectedPartner.address}</p>
-            <p className="text-stone-500 text-[11px] mt-1 italic">Contact: {selectedPartner.contactPerson} · Open {selectedPartner.operatingHours}</p>
+            {selectedPartner.address && <p className="text-stone-600 text-[11px] mt-0.5">{selectedPartner.address}</p>}
+            <p className="text-stone-500 text-[11px] mt-1 italic">
+              Contact: {selectedPartner.contactPerson} {selectedPartner.operatingHours ? `· Open ${selectedPartner.operatingHours}` : ''}
+            </p>
           </div>
         )}
 

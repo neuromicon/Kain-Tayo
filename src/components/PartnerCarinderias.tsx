@@ -7,12 +7,14 @@ interface PartnerCarinderiasProps {
   partners: Partner[];
   onOpenClaimGuide: (partner?: Partner) => void;
   onOpenSupportModal: (partner?: Partner) => void;
+  onOpenPartnerApplication?: () => void;
 }
 
 export const PartnerCarinderias: React.FC<PartnerCarinderiasProps> = ({
   partners,
   onOpenClaimGuide,
   onOpenSupportModal,
+  onOpenPartnerApplication,
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
