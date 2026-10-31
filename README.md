@@ -29,7 +29,7 @@ A decentralized, open-source community food initiative in Dumaguete City, Negros
 
 Rice Circle operates without central kitchens, warehouses, or food trucks. It works entirely through existing licensed local carinderias:
 
-1. **You Order & Pay for 2:**  
+1. **You Order & Pay for 2 rice:**  
    Order your regular meal at any partner shop. Pay for your rice plus one extra cup (₱10–₱15). You receive your food immediately.
 2. **The Pot Stays Full:**  
    The cook keeps the payment upfront. The extra serving stays credited in that shop's Rice Bank.
